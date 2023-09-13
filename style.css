@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: url("img/bg.jpg") no-repeat;
+    background-size: 100vw 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#scoreBox {
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Titan One', cursive;
+
+}
+
+.mic {
+    position: absolute;
+    top: 9px;
+    left: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Titan One', cursive;
+    color: rgb(162, 255, 1);
+}
+
+.mic:hover {
+    cursor: pointer;
+}
+
+.mic-2 {
+    color: black;
+}
+
+#highscoreBox {
+    position: absolute;
+    top: 60px;
+    right: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Titan One', cursive;
+}
+
+.board {
+    background-color: rgb(138 163 74);
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid white;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+
+}
+
+.s-head {
+    background-color: red;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.s-snake {
+
+    background-image: linear-gradient(to bottom right, red, yellow);
+
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.s-food {
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    border-radius: 50%;
+    border: 2px solid black;
+}
