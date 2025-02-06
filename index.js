@@ -18,6 +18,18 @@ let snakeArr = [{
     y: 15
 }];
 
+function getNumber() {
+    const inputElement = document.getElementById("numberInput");
+    let number = parseInt(inputElement.value); // Convert input value to a number
+
+    if (!isNaN(number) && number > 0) {
+        speed = number; // Update the game speed dynamically
+        document.getElementById("output").innerText = `Speed : ${speed}`;
+    } else {
+        document.getElementById("output").innerText = `Please enter a valid number!`;
+    }
+}
+
 
 let food = { x: 6, y: 6 };
 // function work() {
@@ -39,6 +51,7 @@ function main(ctime) {
 
 
 }
+
 
 // function isCollide(sarr) {
 //     return false;
@@ -155,29 +168,36 @@ if (highscore === null) {
 }
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', (e) => {
+
+    if (!["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d", "W", "A", "S", "D"].includes(e.key)) {
+        return;
+    }
     inputDirection = { x: 0, y: 1 };
     movesound.play();
     switch (e.key) {
         case "ArrowUp":
+        case "w":
+        case "W":
             inputDirection.x = 0;
             inputDirection.y = -1;
-
-
             break;
         case "ArrowDown":
+        case "s":
+        case "S":
             inputDirection.x = 0;
             inputDirection.y = 1;
-
             break;
         case "ArrowLeft":
+        case "a":
+        case "A":
             inputDirection.x = -1;
             inputDirection.y = 0;
-
             break;
         case "ArrowRight":
+        case "d":
+        case "D":
             inputDirection.x = 1;
             inputDirection.y = 0;
-
             break;
     }
 

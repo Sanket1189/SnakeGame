@@ -49,6 +49,20 @@
     font-weight: bold;
     font-family: 'Titan One', cursive;
 }
+#output {
+    position: absolute;
+    top: 110px;
+    right: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Titan One', cursive;
+}
+
+#inputBox {
+    position: absolute;
+    top: 160px;
+    right: 200px;
+}
 
 .board {
     background-color: rgb(138 163 74);
@@ -61,15 +75,40 @@
 
 }
 
-.s-head {
+/* .s-head {
     background-color: red;
     border: 3px solid black;
     border-radius: 20px;
+} */
+.s-head {
+    background-color: rgb(231, 152, 78); /* Snake body color */
+    border: 3px solid black; /* Border for the head */
+    border-radius: 50%; /* Rounded shape to resemble a snake's head */
+    position: relative; /* To position the eyes correctly */
+}
+
+/* Snake Eyes */
+.s-head::before, .s-head::after {
+    content: "";
+    position: absolute;
+    top: 8px; /* Positioning the eyes near the top */
+    width: 6px; /* Size of each eye */
+    height: 6px; /* Size of each eye */
+    background-color: black; /* Color of the eyes */
+    border-radius: 50%; /* Circular eyes */
+}
+
+.s-head::before {
+    left: 8px; /* Left eye position */
+}
+
+.s-head::after {
+    right: 8px; /* Right eye position */
 }
 
 .s-snake {
 
-    background-image: linear-gradient(to bottom right, red, yellow);
+    background-image: linear-gradient(45deg, rgb(212, 175, 54) 25%, rgb(23, 26, 10) 25%, rgb(23, 26, 10) 50%, rgb(212, 175, 54) 50%, rgb(212, 175, 54) 75%, rgb(23, 26, 10) 75%, rgb(23, 26, 10)); /* Black streaks effect */
 
     border: 1px solid white;
     border-radius: 25px;
@@ -79,4 +118,34 @@
     background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
     border-radius: 50%;
     border: 2px solid black;
+}
+
+#numberInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 5px;
+    background-color: #dff7df; /* Light green background */
+    color: #4CAF50; /* Green text */
+    outline: none;
+}
+
+/* Change input focus color */
+#numberInput:focus {
+    border-color: #1d8048; /* Darker green border when focused */
+}
+
+/* Snake theme green for button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #27752a; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a531d; /* Darker green when hovered */
 }
